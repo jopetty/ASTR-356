@@ -35,6 +35,7 @@ Countable additivity requires that if $A,B$ are disjoint then $P(A \cup B) = P(A
 Ohterwise, Look up "Inclusion/Exclusion rule for $n$ events"
 
 - Conditional Probability
+
   - $P(E | F)$ = Probability of $E$ given $F$
   - $F \subset \Omega$ is an event, $E$ is an event conditional upon $F$
   - Suppose we toss two fair dice. If the first dice is 4, what is the probability that the sum is 6?
@@ -42,13 +43,35 @@ Ohterwise, Look up "Inclusion/Exclusion rule for $n$ events"
   - $$P(E|F) = \frac{P(EF)}{P(F)} \implies P(EF) = P(E|F)\cdot P(F)$$ (called the multiplication rule)
     - $P(E|E) = 1$
     - When $E,F$ are mutually exclusive, $P(EF) = 0 \implies P(E | F) = 0$
+
 - Independent events
+
   - If $E,F$ don't depend on one another, then $P(E|F) = P(E), \quad P(F|E) = P(F)$,
   - By the multiplication rule, $P(EF) = P(E)\cdot P(F)$
+
 - Bayes' Theorem
+
   - $$P(F | E) = \frac{P(E|F)\cdot P(F)}{P(E)}$$
   - $P(F|E)$ = posterior probability
   - $P(E|F)$ = Likelihood
   - $P(F)$ = Prior probability
-  - $P(E)$ = Marginal likelihood, model evidence
-  - posterior $\propto$ likelihood $\times$ prior probability
+  - $P(E)$ = Marginal likelihood, model evidence (not as important)
+  - posterior prob. $\propto$ likelihood $\times$ prior probability
+    - We can normalize the posterior probability after the fact based on this
+
+- Law of total probability
+
+  - Let $B_1,\dots,B_k$ be a partition of $\Omega$ (partition = disjoint, union of all is $\Omega$), and $A$ be a subset of $\Omega$. Then $P(A) = P(A\cap B_1) + \cdots + P(A \cap B_k) = \sum_i P(A \cap B_i)$
+  - Since $P(A \cap B_i) = P(A|B_i)P(B_i)$, we can say that $P(A) = \sum_i P(A|B_i)P(B_i)$
+  - Using Bayes' Theorem: $P(B_j | A) = P(A|B_j)P(B_j) / P(A)$
+  - We can rewrite as $P(A|B_j)P(B_j) / (\sum_{i=0}^n P(A|B_i)\cdot P(B_i))$
+
+- Random Variables
+
+  - Variable whose value results from the measurement of a quantity which is subject to random variation
+  - Number of photons in a spectral band, the sum of the roll of two dice, etc
+  - Data are realizations of random variables
+  - Random var is $X$, particular realization is $x$ 
+  - Discrete Random Variables
+
+  ​
