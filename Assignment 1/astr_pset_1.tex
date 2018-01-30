@@ -1,5 +1,7 @@
 \documentclass[10pt, physics]{homework}
 
+\usepackage{geometry}
+
 \title{Assignment 1}
 \course{ASTR 356b}
 \due{6 February 2018}
@@ -74,8 +76,15 @@
 	\end{proof}
 
 	\begin{problem}[10pts]
-		An astronomer has a sample of optically selected active galactic nuclei (AGN, such as Seyfert galaxies and quasi-stellar objects or QSOs) and surveys them with a radio telescope to estimate the fraction of AGN that produce non-thermal radio emission from a relativistic jet. Let $X$ denote the random variable giving the result of the radio-loudness test, where $X = 1$ indicates a positive and $X = 0$ indicates a negative result. Let $\theta_1$ denote that radio-loudness is present and $\theta_2$ that the AGN is radio-quite. $P(\theta = \theta_1)$ denotes the probability that a randomly chosen AGN is radio-loud (this is the prevalence of radio-loudness in the optically-selected AGN population).From previous surveys the astronomer expects the prevalence is 0.1, but this is not based on the observational data under study. Based on the known sensitivity of the radio telescope and the AGN redshift distribution, the astronomer can establish that the radio survey is sufficiently sensitive to measure the radio emission 80\% of the time in radio-loud AGN (the failures are due to AGN at very high redshifts). However, the sample also includes some AGN at small redshifts where the telescope may detect other kind of radio emission (e.g., from star formation in the host galaxy). This occurs 30\% of the time. What is the probability that an AGN is truly radio-loud when a positive detection is obtained, $P(\theta  = \theta_1 \mid X = 1)$? Show with a plot how the probability $P(\theta = \theta_1 \mid X = 1)$ changes as the probability of obtaining a false positive decreases from 30\%  to 5\%.
+		An astronomer has a sample of optically selected active galactic nuclei (AGN, such as Seyfert galaxies and quasi-stellar objects or QSOs) and surveys them with a radio telescope to estimate the fraction of AGN that produce non-thermal radio emission from a relativistic jet. Let $X$ denote the random variable giving the result of the radio-loudness test, where $X = 1$ indicates a positive and $X = 0$ indicates a negative result. Let $\theta_1$ denote that radio-loudness is present and $\theta_2$ that the AGN is radio-quiet. $P(\theta = \theta_1)$ denotes the probability that a randomly chosen AGN is radio-loud (this is the prevalence of radio-loudness in the optically-selected AGN population). From previous surveys the astronomer expects the prevalence is 0.1, but this is not based on the observational data under study. Based on the known sensitivity of the radio telescope and the AGN redshift distribution, the astronomer can establish that the radio survey is sufficiently sensitive to measure the radio emission 80\% of the time in radio-loud AGN (the failures are due to AGN at very high redshifts). However, the sample also includes some AGN at small redshifts where the telescope may detect other kind of radio emission (e.g., from star formation in the host galaxy). This occurs 30\% of the time. What is the probability that an AGN is truly radio-loud when a positive detection is obtained, $P(\theta  = \theta_1 \mid X = 1)$? Show with a plot how the probability $P(\theta = \theta_1 \mid X = 1)$ changes as the probability of obtaining a false positive decreases from 30\%  to 5\%.
 	\end{problem}
+	\begin{proof}[Solution]
+		We know by the law of total probability that 
+		\[ P(X = 1) = \frac{4}{5}\frac{1}{10} + \frac{3}{10}\frac{9}{10} = \frac{7}{20}. \]
+		We then use Bayes' theorem to determine that the probability that an AGN is loud given a positive detection is 
+		\[ P(\theta = \theta_1 \mid X = 1) = \frac{P(X = 1 \mid \theta = \theta_1)\cdot P(\theta = \theta_1)}{P(X = 1)} = \frac{(4/5)\cdot(1/10)}{7/20} = \final{\frac{8}{35} \approx 22.86\%.}\qedhere \]
+		\note{How do I plot this?}
+	\end{proof}
 
 	\begin{problem}[12pts]
 		The probability density function $f(x)$ of a hypothetical measurement is given by the triangular function shown below (Figure 1), where the value of $f(0)$ is called $C$. 
@@ -86,6 +95,19 @@
 			\part[part:6:d] Sketch this function for the cases that $a = 1$ and $a =2$.
 		\end{parts}
 	\end{problem}
+	\begin{proof}[Solution to~\ref{part:6:a}]
+		We know that integrating over the whole distribution must give unity, so we see that 
+		\[ \frac{1}{2}(a - (-a))\cdot C = 1 \implies C = \final{\frac{1}{a}.}\qedhere \]
+	\end{proof}
+	\begin{proof}[Solution to~\ref{part:6:b}]
+		The variance of $f(x)$ is given analytically by
+		\[ \text{Var}\qty(f(x)) = \frac{(-a)^2 + (a) + c^2 - (a)(-a) - a(0) - (-a)(0)}{18} = \final{\frac{a^2}{6}.} \]
+		The mean of $f(x)$ is given analytically by 
+		\[ \text{Mean}\qty(f(x)) = \frac{(-a) + a + 0}{3} = \final{0.}\qedhere \]
+	\end{proof}
+	\begin{proof}[Solution to~\ref{part:6:c}]
+		\note{How do I do this?}
+	\end{proof}
 
 	\begin{problem}[12pts]
 		The Monty Hall problem is a well-known problem in statistics based on a game show. The scenario is that a contestant is given a choice of 3 doors. Behind one of them is the grand prize, while the other 2 doors have goats. (Obviously, you don’t want to have a goat.) After the contestant decides for a door, hoping to have chosen the winner, the game show master opens one of the doors. The show master knows what is behind each door, so he will never open the door with the prize and he also does not open the contestant’s door. After opening the door, the show master asks the contestant whether he wants to switch his door to the other remaining one. The question is: Should the contestant change his choice. In other words, would that increase his chances of winning? Perform computer simulations to answer that question. Does that answer make sense? Write down an analytical derivation, as well.
