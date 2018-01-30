@@ -1,4 +1,4 @@
-\documentclass[10pt, physics]{homework}
+\documentclass[10pt, physics, diagram]{homework}
 
 \usepackage{geometry}
 \usepackage{graphicx}
@@ -110,11 +110,27 @@
 		Using the CDF for a symmetric triangular distribution, we see that 
 		\[ P(X \leq x) = \frac{(x-a)^2}{(b-a)(b-c)} = \frac{a^2}{2a^2} = \final{\frac{1}{2}.}\qedhere \]
 	\end{proof}
-	\begin{proof}[Sketch of $a=1$]
-		\vspace{5cm}
+	\begin{proof}[Sketch]
+		For $a = 1$:
+		\begin{center}
+			\begin{tikzpicture}
+				\draw[<->] (-5,0) to (5,0) {};
+				\draw[->]  (0,-0.5) to (0,3) {};
+
+				\draw[gray, fill=yellow, opacity=0.2] (-2,0) -- (0,2) -- (2,0) -- cycle {};
+			\end{tikzpicture}
+		\end{center}
 	\end{proof}
-	\begin{proof}[Sketch of $a=2$]
-		\vspace{5cm}
+	\begin{proof}[Sketch]
+		For $a = 2$:
+		\begin{center}
+			\begin{tikzpicture}
+				\draw[<->] (-5,0) to (5,0) {};
+				\draw[->]  (0,-0.5) to (0,3) {}; 
+
+				\draw[gray, fill=yellow, opacity=0.2] (-4,0) -- (0,1) -- (4,0) -- cycle {};
+			\end{tikzpicture}
+		\end{center}
 	\end{proof}
 
 	\begin{problem}[12pts]
