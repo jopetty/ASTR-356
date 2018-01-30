@@ -71,18 +71,30 @@ def problem_two():
 
 def problem_three():
 	mu = 1
+	sigma = 0
 
 	avg_avg = []
 	avg_med = []
 	avg_hlf = []
 
 	for i in range(0,10**4):
-		values = np.random.normal(0,mu,100)
+		values = np.random.normal(sigma,mu,100)
 		avg_avg.append(mu - np.average(values))
 		avg_med.append(mu - np.median(values))
 		avg_hlf.append(mu - 0.5*(min(values) + max(values)))
+	
+	tests = [avg_avg, avg_med, avg_hlf]
 
+	for t in tests:
+		print(np.average(t))
+	
+	plt.rc('text', usetex=True) 
+	plt.rc('font', family='serif')
 
+	# plt.plot(range(0,10**4), avg_avg, label="Test")
+	count, bins, ignored = plt.hist(avg_avg, 100, normed=True)
+	# ax_two.plot(bins, 1/(sigma * np.sqrt(2 * np.pi)) * np.exp( - (bins - 0)**2 / (2 * 1**2) ), linewidth=2, color='r')
+	plt.show()
 
 
 def main():
