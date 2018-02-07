@@ -117,7 +117,10 @@
 				\draw[<->] (-5,0) to (5,0) {};
 				\draw[->]  (0,-0.5) to (0,3) {};
 
-				\draw[gray, fill=yellow, opacity=0.2] (-2,0) -- (0,2) -- (2,0) -- cycle {};
+				\draw[gray, fill=red, opacity=0.2] (-2,0) -- (0,2) -- (2,0) -- cycle {};
+				\node[rectangle, inner sep=0pt, minimum height=0pt, minimum width=4pt, draw, label=right:{$1$}] at (0,2) {};
+				\node[rectangle, inner sep=0pt, minimum height=4pt, minimum width=0pt, draw, label=below:{$-1$}] at (-2,0) {};
+				\node[rectangle, inner sep=0pt, minimum height=4pt, minimum width=0pt, draw, label=below:{$1$}] at (2,0) {};
 			\end{tikzpicture}
 		\end{center}
 	\end{proof}
@@ -129,6 +132,9 @@
 				\draw[->]  (0,-0.5) to (0,3) {}; 
 
 				\draw[gray, fill=yellow, opacity=0.2] (-4,0) -- (0,1) -- (4,0) -- cycle {};
+				\node[rectangle, inner sep=0pt, minimum height=0pt, minimum width=4pt, draw, label=right:{$\frac{1}{2}$}] at (0,1) {};
+				\node[rectangle, inner sep=0pt, minimum height=4pt, minimum width=0pt, draw, label=below:{$-2$}] at (-4,0) {};
+				\node[rectangle, inner sep=0pt, minimum height=4pt, minimum width=0pt, draw, label=below:{$2$}] at (4,0) {};
 			\end{tikzpicture}
 		\end{center}
 	\end{proof}
