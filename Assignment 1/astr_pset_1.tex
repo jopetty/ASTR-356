@@ -136,4 +136,35 @@
 	\begin{problem}[12pts]
 		The Monty Hall problem is a well-known problem in statistics based on a game show. The scenario is that a contestant is given a choice of 3 doors. Behind one of them is the grand prize, while the other 2 doors have goats. (Obviously, you don’t want to have a goat.) After the contestant decides for a door, hoping to have chosen the winner, the game show master opens one of the doors. The show master knows what is behind each door, so he will never open the door with the prize and he also does not open the contestant’s door. After opening the door, the show master asks the contestant whether he wants to switch his door to the other remaining one. The question is: Should the contestant change his choice. In other words, would that increase his chances of winning? Perform computer simulations to answer that question. Does that answer make sense? Write down an analytical derivation, as well.
 	\end{problem}
+	\begin{proof}[Solution]
+		Yes, the contestant should switch.
+		Let $\Omega$ be the sample space, containing two outcomes, $C$ and $C^\complement$, which entirely partition $\Omega$.
+		When the contestant initially chooses a door, he has a $\frac{1}{3}$ chance of choosing the car; that is, $P(C) = \frac{1}{3}$.
+		He conversely has a $\frac{2}{3}$ chance of choosing a goat.
+		When the host opens one of the doors, he reveals a goat, but he \emph{does not change the initial probability distribution of the car}.
+		There is still a $\frac{2}{3}$ chance that the car is behind one of the doors that the contestant did not initially pick.
+		However, now that the contestant \emph{knows} it cannot be behind the open door, there is a $\frac{2}{3}$ chance that the car is behind the door which he did not pick initially, and a $\frac{1}{3}$ chance that it is behind his chosen door. 
+		Thus, it is advantageous for him to switch.
+
+		Analytically, we can write this using Bayes' theorem.
+		Let $C_n$ denote finding the car behind door $n$,
+		and let $D_m$ denote the probability that the host opens door $m$.
+		When you make your initial guess, you know that $P(C_n) = \frac{1}{3}$ for all $n$; the car could be anywhere.
+		Without a loss of generality, let's say that you pick door 1.
+		We know then that
+		\[ P(D_1) = 0,\qquad P(D_2) = P(D_3) = \frac{1}{2}, \]
+		Since the host cannot open your door, but you don't know which door will be opened, so you must assume he will open each with equal probability.
+		Again, without a loss of generality, lets assume that the host opens door 3.
+		Let's consider what happens if you chose incorrectly; in that case, the hose will only have one door to open, since he cannot open your door nor the one hiding the car, so
+		\[ P(D_3 \mid C_2) = 1. \]
+		On the other hand, if you chose correctly, the host can now open either door, so
+		\[ P(D_3 \mid C_1) = \frac{1}{2}. \]
+		Then using Bayes' theorem, we can calculate the probability of finding the car if you switch or remain.
+		In the case that you switch your choice from $C_1$ to $C_2$, we see that
+		\[ P(C_2 \mid D_3) = \frac{P(D_3 \mid C_2)\cdot P(C_2)}{P(D_3)} = \frac{1 \cdot \frac{1}{3}}{\frac{1}{2}} = \final{\frac{2}{3}.}\]
+		On the other hand, if you remain with your choice of $C_1$, we see that
+		\[ 
+			P(C_1 \mid D_3) = \frac{P(D_3 \mid C_1)\cdot P(C_1)}{P(D_3)} = \frac{\frac{1}{2}\cdot\frac{1}{3}}{\frac{1}{2}} = \final{\frac{1}{3}.}\qedhere	
+		\]
+	\end{proof}
 \end{document}
