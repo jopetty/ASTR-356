@@ -1,6 +1,7 @@
 \documentclass[10pt, physics]{homework}
 
 \usepackage{hyperref}
+\usepackage{graphicx}
 
 \author{Jackson Petty}
 \title{Assignment 2}
@@ -9,10 +10,21 @@
 
 \begin{document}
 	\begin{problem}
+		Test the central limit theorem by creating plots similar to the figures shown in the Wikipedia page for ``central limit theorem''. 
+		\begin{parts}
+			\part[part:1:a] Show the distribution of mean values of $N$ random variables obtained from a uniform distribution for increasing numbers of $N$ (i.e., $N = 2, 5, 20, 200)$ and compare each distribution with a Gaussian with the same mean and variance as the obtained distribution.
+			\part[part:1:b] Do the same as ~\ref{part:1:a} but using the distribution in problem 4 of problem set 1, with $a = 2$.
+		\end{parts}
+	\end{problem}
+	\includegraphics[width=\textwidth]{1a}
+	\includegraphics[width=\textwidth]{1b}
+
+	\begin{problem}
 		Go to \url{exoplanets.org} and obtain the distribution of stellar [Fe/H]. For this, go to the ``Plots'' tab and click on the “Histogram Plot” and ``Advance'' tabs (on the right). Using the ``Data'' pull- down menu (which is below the ``Simple'' and ``Advance'' tabs) choose FE (almost at the end of the menu, under “Stellar Properties”). Choose the min and max of the [Fe/H] values to be $-0.5$ and $0.5$, respectively, and a binwidth of $0.04$ (this should give you 25 bins), using all stars with exoplanets and measured values of [Fe/H].
 
 		Use this distribution as the parent pdf. Write a code to obtain $10^5$ randomly distributed points from this parent distribution. Plot a histogram of the value of the points obtained from your code and compare it with a plot of the parent distribution. Are the two distributions similar? How would you test if these two distributions come from the same parent distribution?
 	\end{problem}
+	\includegraphics[width=\textwidth]{2}
 	\begin{proof}[Solution]
 		The plots are indeed quite similar.
 		In order to get a quantifiable metric on how distinct the two distributions are (and thereby determine if they have the same parent distribution), we could preform a $t$-test, or graphically determine the similarity through a Q-Q plot.
@@ -112,7 +124,8 @@
 		\[ \text{error} = \pm N\cdot\frac{\sigma}{\sqrt{3}}, \]
 		where $N$ is 
 	\end{proof}
-
+	\includegraphics[width=\textwidth]{3d}
+	
 	\begin{problem}
 		Estimating parameters of a uniform distribution.
 		\begin{parts}
