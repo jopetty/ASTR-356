@@ -1,11 +1,23 @@
 \documentclass[10pt, physics]{homework}
 
+\usepackage{hyperref}
+
 \author{Jackson Petty}
 \title{Assignment 2}
 \course{PHYS 356}
 \due{21 February 2018}
 
 \begin{document}
+	\begin{problem}
+		Go to \url{exoplanets.org} and obtain the distribution of stellar [Fe/H]. For this, go to the ``Plots'' tab and click on the “Histogram Plot” and ``Advance'' tabs (on the right). Using the ``Data'' pull- down menu (which is below the ``Simple'' and ``Advance'' tabs) choose FE (almost at the end of the menu, under “Stellar Properties”). Choose the min and max of the [Fe/H] values to be $-0.5$ and $0.5$, respectively, and a binwidth of $0.04$ (this should give you 25 bins), using all stars with exoplanets and measured values of [Fe/H].
+
+		Use this distribution as the parent pdf. Write a code to obtain $10^5$ randomly distributed points from this parent distribution. Plot a histogram of the value of the points obtained from your code and compare it with a plot of the parent distribution. Are the two distributions similar? How would you test if these two distributions come from the same parent distribution?
+	\end{problem}
+	\begin{proof}[Solution]
+		The plots are indeed quite similar.
+		In order to get a quantifiable metric on how distinct the two distributions are (and thereby determine if they have the same parent distribution), we could preform a $t$-test, or graphically determine the similarity through a Q-Q plot.
+	\end{proof}
+
 	\begin{problem}
 		Suppose you have bivariate data $(x_1,y_1),\dots,(x_n,y_n)$.
 		A common model is that there is a linear relationship between $x$ and $y$, so in principle the data should lie exactly along a line.
@@ -78,7 +90,7 @@
 		In order to maximize our likelihood estimates, we need to differentiate our likelihood function (or log likelihood) with respect to the subset of parameters $\vb*{\theta^*} = (a,b)$ we wish to account for.
 		So
 		\begin{align*}
-			\pdv{\ln\mathcal{L}(\vb*{\theta} \mid \vb{y})}{\vb*{\theta^*}} = 0 \implies \pdv{\vb*{\theta}}\qty[-\frac{1}{\sigma^2}\sum_{i=1}^n \qty(y_i - [b + ax_i])^2] = 0,
+			\pdv{\ln\mathcal{L}(\vb*{\theta} \mid \vb{y})}{\vb*{\theta^*}} = 0 \implies \pdv{\vb*{\theta^*}}\qty[-\frac{1}{\sigma^2}\sum_{i=1}^n \qty(y_i - [b + ax_i])^2] = 0,
 		\end{align*}
 		Since all other terms are constant in $a,b$.
 		Evaluating these derivatives separately, we see that
