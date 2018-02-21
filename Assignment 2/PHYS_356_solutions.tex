@@ -119,10 +119,17 @@
 		This tells us that the maximum likelihood estimates for $a$ and $b$ are
 		\[ \hat{b} = \bar{y} - \hat{a}\bar{x},\quad\text{and}\quad \hat{a} = \frac{\text{Cov}(x,y)}{\text{Var}(x)} = \frac{\sum (x_i-\bar{x})(y_i-\bar{y})}{\sum(x_i-\bar{x})^2}. \]
 		For the data given in part~\ref{part:3:b:i}, we see that
-		\[ \text{Cov}(x,y) \approx -4.67,\quad\text{Var}(x) \approx 14.33 \implies \final{\hat{a} = -3.07,\quad \hat{b} = 12.88.}\]
+		\[ \text{Cov}(x,y) \approx -4.67,\quad\text{Var}(x) \approx 2.67 \implies \final{\hat{a} = -1.75,\quad \hat{b} = 8.92.}\]
 		Since our data was initially drawn from a distribution approximating $\mathcal{N}(ax_i+b,\sigma^2)$, and we have drawn 3 samples, then the standard error for our estimates of $a$ and $b$ should be 
-		\[ \text{error} = \pm N\cdot\frac{\sigma}{\sqrt{3}}, \]
-		where $N$ is 
+		\[ s_b = s_e\qty[\frac{1}{n} + \frac{\bar{x}^2}{\sum(x_i-\bar{x})^2}]^{1/2}, s_a = \frac{s_e}{\sqrt{\sum(x_i-\bar{x})^2}}, \]
+		where $s_e$ is the standard error of our estimate, given by 
+		\[ s_e = \sqrt{MSE} = \sqrt{\frac{\sum e_i^2}{n_2}} = \sqrt{\frac{\sum(y_i - \hat{y}_i)^2}{n-2}}. \]
+		For our data, we find that $s_e \approx 2.0412$, which means that 
+		\[ s_a \approx \pm 0.7167,\qquad s_b \approx 2.4650. \]
+		To calculate a $1-\alpha$ confidence interval for each parameter, we multiply the standard error in that estimate by the critical $t$ value for that $\alpha$ with only a single degree of freedom.
+		For $\alpha = 0.05$, we get that $t_{\text{crit}} = 12.706$,
+		which gives us 95\% confidence intervals of 
+		\[ \final{a \in [-10.86, 7.36],\qquad b \in [-22.40, 40.24].}\qedhere \]
 	\end{proof}
 	\includegraphics[width=\textwidth]{3d}
 	
