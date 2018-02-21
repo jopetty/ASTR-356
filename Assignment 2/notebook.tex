@@ -416,10 +416,7 @@ Use python to plot the data and the regression line you found in 1c.
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}50}]:} \PY{c+c1}{\PYZsh{} plt.rc(\PYZsq{}text\PYZsq{}, usetex=True)}
-         \PY{c+c1}{\PYZsh{} plt.rc(\PYZsq{}font\PYZsq{}, family=\PYZsq{}serif\PYZsq{})}
-         \PY{c+c1}{\PYZsh{} plt.figure(figsize=(10,7))}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{scatter}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{y}\PY{p}{,} \PY{n}{marker}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{o}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{coral}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}50}]:} \PY{n}{plt}\PY{o}{.}\PY{n}{scatter}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{y}\PY{p}{,} \PY{n}{marker}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{o}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{coral}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
          \PY{n}{t} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mf}{0.5}\PY{p}{,} \PY{l+m+mf}{5.5}\PY{p}{,} \PY{l+m+mf}{0.1}\PY{p}{)}
          \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{t}\PY{p}{,} \PY{n}{a}\PY{o}{*}\PY{n}{t}\PY{o}{+}\PY{n}{b}\PY{p}{)}
          \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{MLE: \PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{hat}\PY{l+s+si}{\PYZob{}a\PYZcb{}}\PY{l+s+s1}{ }\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{approx \PYZhy{}1.75,}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{quad }\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{hat}\PY{l+s+si}{\PYZob{}b\PYZcb{}}\PY{l+s+s1}{ }\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{approx 8.92\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
