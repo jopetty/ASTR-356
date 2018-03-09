@@ -1,0 +1,59 @@
+\documentclass[10pt, physics]{homework}
+
+\title{Prelab \#7}
+\author{Jackson Petty}
+\course{PHYS 205L}
+\due{9 March 2018}
+
+\begin{document}
+	\begin{problem}
+		Imagine now that there are two water wheels in series in with our water pump (Pressure difference $\Delta P$). Waterwheel 1 turns easily ($W_1$) while Waterwheel 2 turns with difficulty ($W_2$). Describe what you would see with the pump turned on. Specifically:
+		\begin{parts}
+			\part[part:1:a] What is the flow $Q$ through the two waterwheels? Is it the same for each wheel? How does the flow compare to having just one of the wheels in the pipe?
+			\part[part:1:b] What is the pressure drop across each wheel? Across both wheels? Explain.
+			\part[part:1:c] Which wheel is extracting more energy from the flowing water? Support your answer.
+		\end{parts}
+	\end{problem}
+	\begin{proof}[Solution to~\ref{part:1:a}]
+		The flow through each water wheel is the same (or else where the hell did the water go?) but the total flow is less than the original scenarios. Mathematically, the flow through the wheels is 
+		\[ \frac{\Delta P}{W_1 + W_2}.\qedhere \]
+	\end{proof}
+	\begin{proof}[Solution to~\ref{part:1:b}]
+		The pressure drop across each wheel is equal to the product of its difficulty and the flow rate, and the total pressure drop is the sum of the two drops, equal in magnitude to the pressure difference $\Delta P$.
+	\end{proof}
+	\begin{proof}[Solution to~\ref{part:1:c}]
+		Wheel 2 is extracting more energy from the water, since it has the same amount of water flowing through it, but that water is doing more work to turn this wheel than the other wheel.
+	\end{proof}
+
+	\begin{problem}
+		Supplying Power
+		\begin{parts}
+			\part[part:2:a] What is the source of the electrical energy for: a battery, a phone charger, your house’s electrical system, the Mars Rover, a solar panel. What are their limitations?
+			\part[part:2:b] If a battery is shorted, in other words a wire is connected directly between its two terminals, what will happen and why? Do you think it will supply its rated voltage, why or why not? 
+		\end{parts}
+	\end{problem}
+	\begin{proof}[Solution to~\ref{part:2:a}]
+		Unreacted chemicals, my house's electrical system, falling water via a micro-hydro turbine, either a nuclear battery or the sun, and the sun. The sun cannot be turned on on a dime and storage for its energy is difficult; water doesn't provide a \emph{ton} of power. Nuclear things can be dangerous to dispose of. Batteries are dense and not all that efficient in a power-to-weight ratio, and my house isn't always with me.
+	\end{proof}
+	\begin{proof}[Solution to~\ref{part:2:b}]
+		It will short, causing both the wire and battery to heat up quickly (I know because I used to use this as a quick-n-dirty hand warmer during the winter when I was young). Because the wire has negligible resistance, there is nothing `using up' the voltage, and no power will be dissipated.
+	\end{proof}
+
+	\begin{problem}
+		Meters
+		\begin{parts}
+			\part[part:3:a] Why do you have to be more careful when using an ammeter than a voltmeter when making measurement? Think about current draw.
+			\part[part:3:b] If you are measuring the voltage drop across a resistor of around 1000 Ohms, what is the minimum resistance the voltmeter must have so the ratio of the current through the resistor to the current through the meter is less than 0.001.
+			\part[part:3:c] In Figure 2 above, why will the ammeter correctly measure the current through $R_1$ even though the voltmeter is in parallel with the resistor?
+		\end{parts}
+	\end{problem}
+	\begin{proof}[Solution to~\ref{part:3:a}]
+		A voltmeter has a very high internal resistance, and so it draws very little power. By contrast, an ammeter must have a resistance near zero, so incorrect application can cause a short.
+	\end{proof}
+	\begin{proof}[Solution to~\ref{part:3:b}]
+		$\SI{1}{\mega\ohm}$.
+	\end{proof}
+	\begin{proof}[Solution to~\ref{part:3:c}]
+		The internal resistance of the voltmeter is high enough that the current passing through it is negligible, so almost all current flows through $R_1$
+	\end{proof}
+\end{document}

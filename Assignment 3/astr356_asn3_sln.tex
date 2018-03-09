@@ -1,0 +1,34 @@
+\documentclass[10pt, physics]{homework}
+
+\title{Assignment 3}
+\author{Jackson Petty}
+\course{PHYS 356b}
+\due{7 March 2018}
+
+\begin{document}
+	\begin{problem}[Asteroids, 15pts]
+		Download the file \texttt{asteroid\_dens.data} from the Canvas site This dataset has 27 rows and the following columns: Asteroid name; Density in units of $\si{\gram\per\centi\meter\cubed}$; Uncertainty of the density (standard deviation).
+		\begin{parts}
+			\part[part:1:a] Make a figure where the $y$-axis shows the name of each asteroid, and the $x$-axis shows the density. Plot the density of each asteroid in this figure and include the uncertainty in the density as error bars.
+			\part[part:1:b] Plot box and whisker plots for the density measurement and the density error.
+			\part[part:1:c] What do these numbers and plots indicate?
+			\part[part:1:d] Despite the fact that a sample may appear normal (i.e., Gaussian-like) one can investigate further whether some deviation form normality is present. In this example one might want to do this to verify the possibility that subpopulations of asteroids are present in the sample, due to, for example different structure (solid vs. porous) and composition (rock vs. ice). One can do this first visually using a normal probability plot (see \texttt{scipy.stats.probplot}). Plot a normal probability plot of the data and describe what you see.
+			\part[part:1:e] One can also use statistical tests to investigate this. Use the following three different tests to test the ``normality'' of the sample:
+			\begin{enumerate}[label=(\roman*)]
+				\item Anderson-Darling
+				\item Shapiro-Wilk
+				\item Lilliefors test
+			\end{enumerate}
+			See Figure 4.7 of “Statistics, Data Mining, and Machine Learning in Astronomy” to see how these tests are used in python.
+			\part[part:1:e] What can you conclude with regards to the existence of subpopulations in this sample?
+		\end{parts}
+	\end{problem}
+	
+	\begin{problem}
+		Use the same data we used in Lab 4 (\texttt{glob\_clus.dat}), which can be downloaded from the Canvas site. This file contains 81 Globular Clusters (GCs) from our Milky Way Galaxy (MW) and 360 GCs from the nearest large spiral galaxy, the Andromeda Galaxy (M31). The first and second columns are GC name and K-band magnitude, respectively. For the MW, absolute magnitudes are given. For M 31, apparent magnitudes are given. In order to convert the M31 GCs apparent magnitudes to absolute magnitudes (i.e., in order to put them in the same scale as the MW GCs) you need to subtract 24.44 from the apparent magnitude of the M31 GCs.
+		\begin{parts}
+			\part[part:1:a] Plot the distributions of both GCs.
+			\part[part:1:b] Estimate the sample mean and the variance for both samples and give their 99\% confidence intervals (you can assume that the samples come from a parent Gaussian distribution).
+		\end{parts}
+	\end{problem}
+\end{document}
