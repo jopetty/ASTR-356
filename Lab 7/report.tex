@@ -1,0 +1,54 @@
+\documentclass[12pt]{amsart}
+
+	\usepackage[margin=1in]{geometry}
+	\usepackage{siunitx}
+	\usepackage{physics}
+	\usepackage{amsmath}
+	\usepackage{amssymb}
+	\usepackage{mathtools}
+	\usepackage{tabularx}
+	\usepackage{booktabs}
+	\usepackage{multicol}
+	
+	\title{Lab 6 Report, PHYS 205L}
+	\author{Jackson Petty, Friday Section}
+	
+	\begin{document}
+		\noindent\textbf{LAB 6 REPORT, PHYS 205L} \hfill {\small JACKSON PETTY, FRIDAY SECTION} \\
+		\section*{Activity 1: Angular Momentum}
+			\subsection*{Introduction and Objectives}
+			This experiment will investigate how our gyroscope responds under net external torque. We will apply forces to the gyroscope in different ways and interpret how the system responds in the contet of angular momentum and the cross product.
+			\subsection*{Experimental Setup}
+			Our entire experimental setup is contained in the gyroscope, along with a high-speed camera (iPhone 7) to measure how many rotations the gyroscope makes per second.
+			\subsection*{Experimental Procedure}
+			We first turn the gyroscope on and damp any nutations by resting our hands on the external gimble. One the gyroscope has reached its maximum speed, we first gently push up and down on the arrowhead shaft, and note what direction (left or right) this causes the gyroscope to rotate in. Next, we push horizontally on different parts of the inner gimbal rod, and note in which direction (up or down) the gyroscope seems inclined to move. We then correlate the two trials with each other.
+			\subsection*{Observation and Findings}
+			As expected, we find that pushing up induces a torque in the clockwise direction (when viewed from above), while pushing down induces a counterclockwise torque in the system. This is consistant with the definition of torque as $\vb*{\Gamma} = \vb{r} \cross \vb{F}$. We then find that, in a very similar manner, pushing horizontally in an anticlockwise direction induces the same motion as in trial one, where as pushing clockwise horizontally matches with our observations with vertical forces.
+			Finally, we calculate the moment of intertia, angular speed, and angular momentum of the gyroscope as 
+			\[ I_{tot} = \frac{\pi\rho}{2}\qty[r_1^4h_1 - r_2^4h_2 + r_3^4h_2] \approx \SI{1,989e5}{\gram\centi\meter\squared}, \]
+			\[ \vb{L} = I_{tot}\frac{N2\pi}{60} \approx \SI{4.477e6}{\gram\centi\meter\squared\per\second}. \]
+			\subsection*{Interpretation and Comments}
+			While not suprising, it is useful to see that the direction in which a force is applied is consistant with the torque applied. Intuitively, cross products are still strange, but the math does check out.
+	
+		\section*{Activity 2: Precession of the Gyroscope}
+			\subsection*{Introduction and Objectives}
+			This experiment investigates how inbalancing the gyroscope causes it to precess by adding weights to one end of the arrowhead shaft and letting the gyroscope spin.
+			\subsection*{Experimental Setup}
+			We add weights of various masses to different locations on the arrowhead shaft, and let the gyroscope spin, starting at two different angles ($\phi = 45^\circ, 90^\circ$).
+			\subsection*{Experimental Procedure}
+			We use the following weight/distance/angle configurations: ($m=\SI{155}{\gram}, d=\SI{7.14}{\centi\meter},\phi=90^\circ$), ($m=\SI{155}{\gram}, d=\SI{5.08}{\centi\meter},\phi=90^\circ$), ($m=\SI{304}{\gram}, d=\SI{7.14}{\centi\meter},\phi=90^\circ$), and ($m=\SI{304}{\gram}, d=\SI{7.14}{\centi\meter},\phi=45^\circ$). We then measure the rate of precession $\omega_p$, and compare it to our theoretically predicted value, $\hat{\omega}_p$, given by 
+			\[ \hat{\omega}_p = \frac{mgd}{\vb{L}}. \] Note that all measured values are precise to $\pm1$ in the least signigicant digit listed.
+			\subsection*{Observation and Findings}
+			In the first three of our trials, we find results that are consistant with our theoretically expected values, deviating by no more that $\frac{1}{100}$ of a radian per second; here, we observe a pattern that our measured value is less than our predicted value, which is evidence of systematic error in our setup (possible internal fricton in the gyroscope). However, for our last trial, we expect that starting at $45^\circ$ will result in a lessened torque, and thereby speed of precession; however, $\omega_p$ seems unnaffected by this.
+	
+		\section*{Activity 3: Conservation of Angular Momentum}
+			\subsection*{Introduction and Objectives}
+			This final experiment of the lab will be a qualitative analysis of the conservation of angular momentum using a bicycle tire and a freely spinning stool.
+			\subsection*{Experimental Setup}
+			We sit on a stool and hold a spinning bicycle wheel. Then we investigate whether or not the intrinsic spin of the wheel causes us to rotate, and whether or not tilting the wheel causes us to rotate.
+			\subsection*{Experimental Procedure}
+			First, we hand the wheel while spinning with a vertical angular momentum to someone on the stool. Then, they tilt the wheel, inverting it, to gauge the effect that the change in the wheel's angular momentum has on the stool.
+			Additionally, we use weights while extending and contracting our arms to see what effect changing the moment of inertia has on a rotating body.
+			\subsection*{Observation and Findings}
+			We find that tilting the wheel causes the person on the stool to begin spinning in a direction which compensates for the change in the angular momentum of the wheel, which is consistant with the conservation of angular momentum. Additionally, we find that bringing our arms in while spinning makes us go faster, which is consistant with both mathematics and our experiences as small children.
+	\end{document}

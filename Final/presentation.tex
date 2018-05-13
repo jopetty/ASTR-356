@@ -1,0 +1,71 @@
+\documentclass{beamer}
+
+\usepackage{physics}
+\usepackage{booktabs}
+
+% Select theme
+\usetheme{metropolis}
+\usefonttheme[onlymath]{serif}
+
+% Metadata
+\title{Analysis of COMBO-17 Data}
+\author{Jackson Petty}
+\date{\today}
+\institute{PHYS 356, Yale University}
+
+% Define helper macros
+\newcommand{\combo}{{\texttt{COMBO-17}}}
+
+\begin{document}
+	\maketitle
+
+	\begin{frame}{Astronomical Sources}
+		The \combo{} dataset is a survey of the Chandra Deep Field South (CDFS), a patch of sky which is conveinient for observation.
+
+		The data include obervations of various objects (including galaxies, quasars, stars,white dwarfs, and unknown objects) in several different features.
+
+
+	\end{frame}
+
+	\begin{frame}{Dataset}
+		The \combo{} dataset provides the following features for analysis of over 63,000 unique objects.
+		\begin{itemize}
+			\item $R_\text{mag} \pm \varepsilon$: The $R$-band magnitude;
+			\item $MC_z \pm \varepsilon$: Mean redshift in distribution;
+			\item $MC_\text{class}$: Predicted class of object from Monte Carlo simulation;
+			\item \textit{Various luminosities $\pm\,\varepsilon$}: Total object restframe luminosities from various passbands
+		\end{itemize}
+	\end{frame}
+
+	\section{Statistical Methods}
+	\begin{frame}{Clustering}
+		The \combo{} data includes measurements of color(s), magnitude, and a Monte Carlo estimate of the redshift	$z$. We will subset the data to look at either stars or galaxies.
+
+		We'll preform two clustering analyses, using both $k$-means clustering and kernel density estimation to attempt to find distinct groups of observations in the data.
+
+		Evaluation of the two methods includes choosing and justifying a choice for the bandwidths used and finding an optimum (or at least reasonable) value for $k$.
+
+		Preliminary ideas for clustering involve Ra vs Dec or color, or some mixture thereof.
+	\end{frame}
+	\begin{frame}{Principle Component Analysis}
+		Our full dataset allows us to specify objects in any of 17 different luminosity passbands, along with magnitude, redshift, and position data.
+
+		We'll conduct a principle component analysis on these observations to try and reduce that to a lower-dimensional model of CDFS objects.
+	\end{frame}
+	\begin{frame}{Classification}
+		\combo{} provides a classification for each observed object, allowing us to build a classifier for CDFS objects and to preform cross-validation on that classifier by subsetting our data and attempting to classify objects into these categories:
+		\begin{center}
+			\begin{tabular}{@{}ccc@{}}
+				\small\texttt{Star} & \small\texttt{Galaxy} & \small\texttt{Quasar}
+			\end{tabular}
+		\end{center}
+		\combo{} actually provides 5 other categories, but we will subset the data to focus only on the three main groups.
+	\end{frame}
+	\begin{frame}{Classification (cont.)}
+		In order to classify the CDFS objects, we'll build use a $k$-Nearest Neighbors algorithm to divide the feature space into (at least) 3 distinct zones using a subset of the data, and then test using cross validation. To determine the optimal value of $k$, we'll use a grid search.
+
+		Additionally, we'll create a Support Vector Machine (SVM) to classify the objects into the three distinct groups, likely using a Gaussian RBF kernel instead of a linear model, depending on which yields better results.
+
+		In both cases, we'll quantify how well the SVM or $k$-NN algorithm performs by looking at the ROC and precission-recall curves.
+	\end{frame}
+\end{document}

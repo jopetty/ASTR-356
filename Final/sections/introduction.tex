@@ -1,0 +1,42 @@
+\chapter{Introduction}
+
+The Sloan Digital Sky Survey has, since its inception in 2000, collected high-quality photometric observations of objects in our universe. The third data release from the SDSS contains information on over 500 thousand different astronomical objects, classified into Galaxies, Quasars, Stars, M Stars, Sky Spectra, and Unknown Objects. It covers over 3700 square degrees of spectroscopic area.
+
+Our project will focus on the statistical analysis of quasar data. Quasars, or quasi-stellar objects, are of great importance to astronomy and astrophysics. They are highly luminous active galactic nuclei, among the brightest objects in the universe, and help astronomers to understand galaxy formation and evolution. Quasars are often so bright that they shine through other astronomical objects, like clouds of dust or gas, leaving tell-tale absorbtion lines in quasar's spectra. All quasars yet observed have redshifts of between 0.1 and 7 (approximately), corresponding to distances of several hundered million to several billion light years away. Due to their large distance from Earth, studying quasars provides insight into the early stages of the universe~[\cite{starchild}, \cite{skyserver}].
+
+\section{Statistical Goals}
+This project will explore three distinct statistical analyses of SDSS quasar data. Firstly, we wish to preform \emph{Principle Component Analysis} on the data to attempt to reduce the dimensionality to a more reasonable level while still preserving enough variation in the data in order to preform further investigations. Second, we will preform polynomial regression on the $r-i$ color vs $z$ redshift to seek a predictor for the former based on the latter, along with residual analysis to determine what degree polynomial best approximates our data. To preform the analysis, we will make frequent use of the \texttt{numpy}, \texttt{scikit-learn}, and \texttt{scipy}. To plot data, we will use \texttt{matplotlib} and \texttt{astropy}. Finally, we will preform hypothesis testing on the $r$ band data to test if the data's parent distribution is Gaussian. We'll use various statistical tests to check the normality of the data, and use histograms to visualize the population distributions.
+
+\section{Data}
+The SDSS data set which we will be using in this analysis includes observations of $46,420$ Quasi-Stellar Objects, or quasars. Originally presented in \cite{schneider2005}, data includes photometric observations in the following features:\footnote{All magnitudes are in an inverted logarithmic scale.} \\[1ex]
+
+\begin{tabular}{@{}rp{8cm}@{}}
+	\toprule
+	\textbf{\texttt{Des}} & SDSS Designation \\
+	\textbf{\texttt{RA}} & Right Ascension, $0^\circ \leq \text{\textbf{\texttt{RA}}} \leq 360^\circ$. \\
+	\textbf{\texttt{Dec}} & Declination, $-90^\circ \leq \textbf{\texttt{Dec}} \leq +90^\circ$. \\
+	\midrule
+	\textbf{\texttt{z}} & Redshift  \\
+	\midrule
+	\textbf{\texttt{U}} & Ultraviolet band, with $\lambda_\text{eff} \approx \SI{365}{\nano\meter}$. \\
+	$\sigma_\text{\textbf{\texttt{U}}}$ & Measurement error in the ultraviolet band. \\
+	\textbf{\texttt{G}} & Green band, with $\lambda_\text{eff} \approx \SI{464}{\nano\meter}$. \\
+	$\sigma_\text{\textbf{\texttt{G}}}$ & Measurement error in the green band. \\
+	\textbf{\texttt{R}} & Red band, with $\lambda_\text{eff} \approx \SI{658}{\nano\meter}$. \\
+	$\sigma_\text{\textbf{\texttt{R}}}$ & Measurement error in the red band. \\
+	\textbf{\texttt{I}} & Near-infrared band, with $\lambda_\text{eff} \approx \SI{806}{\nano\meter}$. \\
+	$\sigma_\text{\textbf{\texttt{I}}}$ & Measurement error in the \textbf{\texttt{I}} near-infrared band. \\
+	\textbf{\texttt{Z}} & Infrared band, with $\lambda_\text{eff} \approx \SI{900}{\nano\meter}$. \\
+	$\sigma_\text{\textbf{\texttt{Z}}}$ & Measurement error in the \textbf{\texttt{Z}} near-infrared band. \\
+	\textbf{\texttt{J}} & Infrared band, with $\lambda_\text{eff} \approx \SI{1220}{\nano\meter}$. \\
+	$\sigma_\text{\textbf{\texttt{J}}}$ & Measurement error in the \textbf{\texttt{J}} near-infrared band. \\
+	\textbf{\texttt{H}} & Infrared band, with $\lambda_\text{eff} \approx \SI{1630}{\nano\meter}$. \\
+	$\sigma_\text{\textbf{\texttt{H}}}$ & Measurement error in the \textbf{\texttt{H}} near-infrared band. \\
+	\textbf{\texttt{K}} & Infrared band, with $\lambda_\text{eff} \approx \SI{2190}{\nano\meter}$. \\
+	$\sigma_\text{\textbf{\texttt{K}}}$ & Measurement error in the \textbf{\texttt{K}} near-infrared band. \\
+	\textbf{\texttt{Radio}} & Radio brightness \\
+	\textbf{\texttt{X-ray}} & X-ray brightness \\
+	\midrule
+	\textbf{\texttt{M}} & Absolute magnitude in the \textbf{\texttt{I}} band. \\
+	\bottomrule
+\end{tabular}
